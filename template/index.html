@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check if any of our services are down or you are experiencing problems with Razdor">
+    <meta name="keywords" content="Razdor, uptime">
+    <meta name="author" content="Babymusk">
+    <meta http-equiv="refresh" content="120">
+    <link rel="stylesheet" href="../static/main.css">
+    <title>Razdor Uptime</title>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            Razdor Server Status
+        </h1> 
+        <p>
+            Check if any of our services are down or you are experiencing problems with Razdor
+        </p>
+    </div>
+    <h2 style="font-size: xx-large; text-align: center;">
+        {% if value == True %}
+        <p style="background-color: green; padding: 12px; border-radius: 5px;">All services operational ✅</p>
+        {% else %}
+        <p style="background-color: rgb(211, 3, 3); padding: 12px; border-radius: 5px;">Some services down please be patient as we work on fixing them!❌</p>
+        {% endif %}
+    </h2>
+   {% if web_status == True %}
+   <p>
+    <code><a href="/web">/Web</a></code> |Web server up and running ✅
+   </p>
+   {% else %}
+   <p>
+    <code><a href="/web">/Web</a></code> |Web server offline ❌
+   </p>
+   {% endif %}
+   {% if api_status == True %}
+   <p>
+    <code><a href="/api">/Api</a></code> |API server up and running ✅
+   </p>
+   {% else %}
+   <p>
+    <code><a href="/api">/Api</a></code> |API server offline ❌
+   </p>
+   {% endif %}
+   {% if ws_status == True %}
+   <p>
+    <code><a href="/ws">/WS</a></code> |Websocket server up and running ✅
+   </p>
+   {% else %}
+   <p>
+    <code><a href="/ws">/WS</a></code> |Websocket server offline ❌
+   </p>
+   {% endif %}
+   <br/><br/><br/><br/><br/>
+   <footer style="position: sticky; display: block; background-color: #5a5a5a; width: 100%; left: 0; bottom: 0; text-align: left; font-size: x-large;">Created by the Babymusk from the Razdor Team</footer>
+</body>
+</html>

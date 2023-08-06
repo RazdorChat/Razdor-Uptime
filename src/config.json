@@ -1,0 +1,5 @@
+{
+    "WEB": "https://razdor.chat",
+    "WS": "wss://razdor.chat/api/events/ws",
+    "API": "https://razdor.chat/api/user/4165834893111277949"
+}
